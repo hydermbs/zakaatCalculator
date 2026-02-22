@@ -31,7 +31,7 @@ const MidBody = () => {
                 ))}
             </StyledCalculationBoxContainer>
             <ZakatResultBox eligible={String(isEligible)}>
-                <StyledTextField label={CONSTANT.nisab} value={nisab.toLocaleString()} onChange={(e) => setNisab(parseInt(e.target.value))} />
+                <StyledTextField label={CONSTANT.nisab} value={nisab || ''} onChange={(e) => setNisab(parseFloat(e.target.value) || 0)} />
                 <ZakatResultText eligible={String(isEligible)}>
                     {isEligible
                         ? CONSTANT.zakatResultPositive

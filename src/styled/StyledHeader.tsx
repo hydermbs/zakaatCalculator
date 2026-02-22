@@ -135,3 +135,9 @@ export const StyledTextField = styled(TextField)({
     boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
     alignSelf: 'center',
 });
+export const StyledCalculationBoxContainer = styled(Box)({
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 2,
+    width: '100%',
+});

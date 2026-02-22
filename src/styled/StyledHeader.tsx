@@ -61,19 +61,14 @@ export const StyledItemHeading = styled(Typography)({
 export const StyledAssetItem = styled(Box)({
     display: 'flex',
     flexDirection: 'column',
-    flexWrap: 'wrap',
     flexGrow: 1,
     flexShrink: 1,
-    flexBasis: '100%',
-    flexOrigin: 'center',
+    flexBasis: 0,
     margin: '10px',
     padding: '10px',
     borderRadius: '10px',
     boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
-    width: '100%',
-    height: '100%',
-    maxWidth: '100%',
-    maxHeight: '100%',
+    minWidth: 0,
 });
 
 export const StyledBody = styled(Box)({
@@ -135,6 +130,7 @@ export const StyledTextField = styled(TextField)({
     boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
     alignSelf: 'center',
 });
+
 export const StyledCalculationBoxContainer = styled(Box)({
     display: 'flex',
     flexDirection: 'row',

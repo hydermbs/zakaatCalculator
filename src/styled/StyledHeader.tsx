@@ -1,56 +1,139 @@
-import type { Asset, Liability, Section } from "../types/types";
+import styled from '@emotion/styled';
+import { Box, TextField, Typography
+ } from '@mui/material';
 
+export const StyledPageTitle = styled(Typography)({
+    fontSize: '2rem',
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: '100%',
+    flexOrigin: 'center',
+});
+export const Heading = styled(Typography)({
+    fontSize: '1.5rem',
+    fontWeight: 'bold',
+    color: '#1976d2',
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    display: 'flex',
+    marginBottom: '0px',
+});
+export const SubHeading = styled(Typography)({
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+    color: 'grey',
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    display: 'flex',
+    margin: '20px',
+});
 
-export const CONSTANT = {
-    pageHeading: 'HOW TO CALCULATE ZAKAH?',
-    pageSubHeading: 'What is the zakat that was given to me?',
-    pageDescription: 'First, determine the date on which zakat became farz upon you according to the lunar calendar. As per market value on the above date, determine [and put in the below calculator] the value of all assets which you own on the date set above, and on which Zakah will be calculated. Necessary assets on whose value Zakah is to be calculated are given below.This is an obligatory duty on a lunar date, and the date on which it is determined is an obligatory duty on a lunar/Islamic date. The date on which the property is not available is available. Zakat on furniture that matches the brand name, such as specifying a drawer at the bottom of the same way. Zakat funds are required for a comprehensive fuel collector.',
-    zakatResultPositive: 'You are eligible for Zakat',
-    zakatResultNegative: 'You are not eligible for Zakat',
-    zakatResultNetAssets: 'Net Assets',
-    zakatResultZakatDue: 'Zakat Due (2.5%)',
-    nisab: 'Nisab',
-};
+export const Description = styled(Typography)({
+    fontSize: '1rem',
+    fontWeight: 'normal',
+    color: '#1976d2',
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    display: 'flex',
+});
 
-export const ASSET_FIELDS: { key: keyof Asset; label: string }[] = [
-    { key: 'gold', label: 'Gold' },
-    { key: 'silver', label: 'Silver' },
-    { key: 'cash', label: 'Cash' },
-    { key: 'currency', label: 'Currency' },
-    { key: 'prizeBond', label: 'Prize Bond' },
-    { key: 'moneyDepositedInFunds', label: 'Money Deposited in Funds' },
-    { key: 'moneyDepositedInCommittees', label: 'Money Deposited in Committees' },
-    { key: 'stocks', label: 'Stocks' },
-    { key: 'rawMaterial', label: 'Raw Material' },
-    { key: 'goodsInTrade', label: 'Goods in Trade' },
-    { key: 'forex', label: 'Forex' },
-    { key: 'otherAssets', label: 'Other Assets' },
-];
+export const StyledItemHeading = styled(Typography)({
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+    color: 'black',
+    textAlign: 'left',
+    alignItems: 'left',
+    justifyContent: 'left',
+    display: 'flex',
+});
 
-export const INITIAL_ASSETS: Asset = {
-    gold: 0, silver: 0, cash: 0, currency: 0, prizeBond: 0,
-    moneyDepositedInFunds: 0, moneyDepositedInCommittees: 0,
-    stocks: 0, rawMaterial: 0, goodsInTrade: 0, forex: 0, otherAssets: 0,
-};
+export const StyledAssetItem = styled(Box)({
+    display: 'flex',
+    flexDirection: 'column',
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: 0,
+    margin: '10px',
+    padding: '10px',
+    borderRadius: '10px',
+    boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
+    minWidth: 0,
+});
 
-export const LIABILITY_FIELDS: { key: keyof Liability; label: string }[] = [
-    { key: 'loans', label: 'Loans' },
-    { key: 'dueInstallment', label: 'Due Installment' },
-    { key: 'utilityBills', label: 'Utility Bills' },
-    { key: 'payablesToDealers', label: 'Payables to Dealers' },
-    { key: 'payableSalaries', label: 'Payable Salaries' },
-    { key: 'payableDueOfCommittees', label: 'Payable Due of Committees' },
-    { key: 'otherLiabilities', label: 'Other Liabilities' },
-];
+export const StyledBody = styled(Box)({
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: '100%',
+    flexOrigin: 'center',
+    backgroundColor: 'white',
+    padding: '20px',
+    borderRadius: '10px',
+    boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
+    margin: '20px',
+    width: '100%',
+    height: '100%',
+    maxWidth: '70%',
+    maxHeight: '100%',
+    minWidth: '70%',
+    minHeight: '100%',
+    overflow: 'hidden',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    justifySelf: 'center',
+    alignContent: 'center',
+    justifyItems: 'center',
+   
+});
 
-export const INITIAL_LIABILITIES: Liability = {
-    loans: 0, dueInstallment: 0, utilityBills: 0,
-    payablesToDealers: 0, payableSalaries: 0,
-    payableDueOfCommittees: 0, otherLiabilities: 0,
-};
+export const ZakatResultBox = styled(Box)<{ eligible: string }>(({ eligible }) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    margin: '20px 0',
+    padding: '20px',
+    borderRadius: '12px',
+    backgroundColor: eligible === 'true' ? '#e8f5e9' : '#fce4ec',
+    border: `2px solid ${eligible === 'true' ? '#4caf50' : '#e91e63'}`,
+    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+}));
 
+export const ZakatResultText = styled(Typography)<{ eligible: string }>(({ eligible }) => ({
+    fontSize: '1.3rem',
+    fontWeight: 'bold',
+    color: eligible === 'true' ? '#2e7d32' : '#c62828',
+    textAlign: 'center',
+    marginBottom: '8px',
+}));
 
-export const CALCULATION_SECTIONS: Section[] = [
-    { heading: 'Calculate Assets:', fields: ASSET_FIELDS, initialValues: INITIAL_ASSETS, totalLabel: 'Total Assets' },
-    { heading: 'Calculate Liabilities:', fields: LIABILITY_FIELDS, initialValues: INITIAL_LIABILITIES, totalLabel: 'Total Liabilities' },
-];
+export const StyledTextField = styled(TextField)({
+    width:'80%',
+    margin: '10px',
+    padding: '10px',
+    borderRadius: '10px',
+    boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
+    alignSelf: 'center',
+});
+
+export const StyledCalculationBoxContainer = styled(Box)({
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 2,
+    width: '100%',
+});

@@ -8,6 +8,7 @@ const MidBody = () => {
     const [assetTotal, setAssetTotal] = useState<number>(0);
     const [liabilityTotal, setLiabilityTotal] = useState<number>(0);
     const [nisab, setNisab] = useState<number>(0);
+    const [nisabInput, setNisabInput] = useState<string>('');
 
     const netAssets = useMemo(() => Math.max(assetTotal - liabilityTotal, 0), [assetTotal, liabilityTotal]);
     const isEligible = useMemo(() => nisab > 0 && netAssets >= nisab, [netAssets, nisab]);
@@ -31,7 +32,7 @@ const MidBody = () => {
                 ))}
             </StyledCalculationBoxContainer>
             <ZakatResultBox eligible={String(isEligible)}>
-                <StyledTextField label={CONSTANT.nisab} value={nisab || ''} onChange={(e) => setNisab(parseFloat(e.target.value) || 0)} />
+                <StyledTextField label={CONSTANT.nisab} value={nisabInput} onChange={(e) => { setNisabInput(e.target.value); setNisab(parseFloat(e.target.value) || 0); }} />
                 <ZakatResultText eligible={String(isEligible)}>
                     {isEligible
                         ? CONSTANT.zakatResultPositive

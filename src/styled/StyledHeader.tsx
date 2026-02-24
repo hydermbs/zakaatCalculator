@@ -16,6 +16,9 @@ export const StyledPageTitle = styled(Typography)({
     flexShrink: 1,
     flexBasis: '100%',
     flexOrigin: 'center',
+    '@media (max-width: 600px)': {
+        fontSize: '1.4rem',
+    },
 });
 export const Heading = styled(Typography)({
     fontSize: '1.5rem',
@@ -26,6 +29,9 @@ export const Heading = styled(Typography)({
     justifyContent: 'center',
     display: 'flex',
     marginBottom: '0px',
+    '@media (max-width: 600px)': {
+        fontSize: '1.2rem',
+    },
 });
 export const SubHeading = styled(Typography)({
     fontSize: '1.2rem',
@@ -36,6 +42,10 @@ export const SubHeading = styled(Typography)({
     justifyContent: 'center',
     display: 'flex',
     margin: '20px',
+    '@media (max-width: 600px)': {
+        fontSize: '1rem',
+        margin: '10px',
+    },
 });
 
 export const Description = styled(Typography)({
@@ -69,6 +79,10 @@ export const StyledAssetItem = styled(Box)({
     borderRadius: '10px',
     boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
     minWidth: 0,
+    '@media (max-width: 600px)': {
+        flexBasis: '100%',
+        margin: '6px',
+    },
 });
 
 export const StyledBody = styled(Box)({
@@ -97,7 +111,12 @@ export const StyledBody = styled(Box)({
     justifySelf: 'center',
     alignContent: 'center',
     justifyItems: 'center',
-   
+    '@media (max-width: 600px)': {
+        maxWidth: '95%',
+        minWidth: '95%',
+        margin: '10px',
+        padding: '12px',
+    },
 });
 
 export const ZakatResultBox = styled(Box)<{ eligible: string }>(({ eligible }) => ({
@@ -129,6 +148,11 @@ export const StyledTextField = styled(TextField)({
     borderRadius: '10px',
     boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
     alignSelf: 'center',
+    '@media (max-width: 600px)': {
+        width: '100%',
+        margin: '6px 0',
+        padding: '6px',
+    },
 });
 
 export const StyledCalculationBoxContainer = styled(Box)({
@@ -136,4 +160,7 @@ export const StyledCalculationBoxContainer = styled(Box)({
     flexDirection: 'row',
     gap: 2,
     width: '100%',
+    '@media (max-width: 600px)': {
+        flexDirection: 'column',
+    },
 });
